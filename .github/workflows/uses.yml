@@ -5,7 +5,7 @@ on:
       artifacts:
         type: string
         required: true 
-        defualt: dist
+        default: dist
     secrets:
       envPAT:
         required: false
