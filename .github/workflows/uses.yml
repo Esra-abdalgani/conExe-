@@ -2,16 +2,20 @@ name: uses
 on: 
   workflow_call:
     inputs:
-      artifact:
-        description: gfd
+      artifacts:
+        type: string
+        required: true 
+        defualt: dist
+    secrets:
+      envPAT:
         required: false
-        default: dist
-        type: string 
+    outputs:
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Get Code 
+      - name: download
         uses: actions/download-artifact@v3
         with:
-          name: ${{ inputs.artifact }}
+          name: ${{ inputs.artifacts }}

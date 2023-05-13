@@ -67,9 +67,10 @@ jobs:
           path: dist
   deploy:
     needs: build
-    uses: ./.github/workflows/uses.yml
-    with:
-      artifact: dist-files
+    uses: ./.github/workflows/uses.yml 
+    with: 
+      artifacts: dist-files
+      
   deplddoy:
     needs: build
     runs-on: ubuntu-latest
