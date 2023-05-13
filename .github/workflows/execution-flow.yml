@@ -72,7 +72,7 @@ jobs:
       artifacts: dist-files
       
   deplddoy:
-    needs: build
+    needs: [build,deploy]
     runs-on: ubuntu-latest
     steps:
       - name: Get build artifacts
