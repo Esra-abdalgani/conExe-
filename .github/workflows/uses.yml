@@ -1,11 +1,12 @@
 name: uses 
 on: 
   workflow_call:
-    artifact:
-      description: gfd
-      required: false
-      default: dist
-      type: string 
+    inputs:
+      artifact:
+        description: gfd
+        required: false
+        default: dist
+        type: string 
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -15,4 +16,3 @@ jobs:
         with:
           name: ${{ inputs.artifact}}
         run: echo "AFDGFCT"
-        
