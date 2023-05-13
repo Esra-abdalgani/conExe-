@@ -6,13 +6,21 @@ on:
         type: string
         required: true 
         default: dist
-
+    outputs:
+      firstword:
+        description: "dsff"
+        value: ${{ jobs.deploy.outputs.first}}
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    outputs: 
+      first: ${{steps.helo.outputs.firstword}}
     steps:
       - name: download
         uses: actions/download-artifact@v3
         with:
           name: ${{ inputs.artifacts }}
+      - name: output
+        id: helo
+        run: echo "firstword=helo" >> $GITHUB_OUTPUT
