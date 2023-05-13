@@ -1,8 +1,17 @@
 name: uses 
-on: workflow_call 
+on: 
+  workflow_call:
+    artifact:
+      description: gfd
+      required: false
+      default: dist
+      type: string 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: gfds
+      - name: Get Code 
+        uses: actions/download-artifact@v3
+        with:
+          name: ${{ inputs.artifact}}
         run: echo "AFDGFCT"
