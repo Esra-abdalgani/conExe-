@@ -1,0 +1,21 @@
+name: Matrix Demo 
+on: push 
+jobs:
+  build:
+    continue-on-error: true 
+    strategy:
+      matrix:
+        node: [12,14,16]
+        os: [ubuntu-latest , windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: get code 
+        uses: actions/checkout@v3
+      - name: install nodeJs
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{matrix.node}}
+      - name: install Dep 
+        run: npm ci 
+      - name: Build
+        run: npm run build 
