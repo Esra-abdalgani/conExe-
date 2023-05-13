@@ -1,0 +1,7 @@
+name: uses 
+on: workflow_call 
+jobs:
+  deploy:
+    steps:
+      - name: gfds
+        run: echo "AFDGFCT"

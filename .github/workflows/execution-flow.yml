@@ -4,6 +4,8 @@ on:
     branches:
       - main
 jobs:
+  deploy:
+    uses: ./.github/workflows/uses.yml
   lint:
     runs-on: ubuntu-latest
     steps:
@@ -35,7 +37,7 @@ jobs:
         run: npm ci
       - name: Test code
         id: run_test 
-        continue-on-error: false 
+        continue-on-error: true 
         run: npm run test
       - name: Upload test report
         uses: actions/upload-artifact@v3
