@@ -35,7 +35,7 @@ jobs:
         run: npm ci
       - name: Test code
         id: run_test 
-        continue-on-error: true
+        continue-on-error: false 
         run: npm run test
       - name: Upload test report
         uses: actions/upload-artifact@v3
