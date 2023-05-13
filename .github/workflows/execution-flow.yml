@@ -4,8 +4,6 @@ on:
     branches:
       - main
 jobs:
-  deploy:
-    uses: ./.github/workflows/uses.yml
   lint:
     runs-on: ubuntu-latest
     steps:
@@ -43,7 +41,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: test-report
-          path: test.json
+          path: test.json  
   build:
     needs: test
     runs-on: ubuntu-latest
@@ -67,6 +65,10 @@ jobs:
         with:
           name: dist-files
           path: dist
+  deploy:
+    uses: ./.github/workflows/uses.yml
+    with:
+      name: dist-files
   deplddoy:
     needs: build
     runs-on: ubuntu-latest
