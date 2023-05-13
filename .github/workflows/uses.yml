@@ -6,10 +6,7 @@ on:
         type: string
         required: true 
         default: dist
-    secrets:
-      envPAT:
-        required: false
-    outputs:
+
 
 jobs:
   deploy:
