@@ -68,7 +68,7 @@ jobs:
   deploy:
     uses: ./.github/workflows/uses.yml
     with:
-      name: dist-files
+      artifact: dist-files
   deplddoy:
     needs: build
     runs-on: ubuntu-latest
