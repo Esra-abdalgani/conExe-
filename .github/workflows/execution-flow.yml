@@ -80,7 +80,7 @@ jobs:
         with:
           name: dist-files
       - name: Output contents
-        run: ${{needs.deploy.outputs.firstword}}
+        run: echo "${{needs.deploy.outputs.firstword}}"
       - name: Deploy
         run: echo "Deploying..."
   report:
