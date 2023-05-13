@@ -67,7 +67,7 @@ jobs:
         with:
           name: dist-files
           path: dist
-  deploy:
+  deplddoy:
     needs: build
     runs-on: ubuntu-latest
     steps:
