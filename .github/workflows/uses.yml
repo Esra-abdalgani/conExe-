@@ -2,6 +2,7 @@ name: uses
 on: workflow_call 
 jobs:
   deploy:
+  runs-on: ubuntu-latest
     steps:
       - name: gfds
         run: echo "AFDGFCT"
